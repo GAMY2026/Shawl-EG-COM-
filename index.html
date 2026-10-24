@@ -62,6 +62,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(19,16,42,.94);backdrop-f
 .sec-h h2{font-size:clamp(32px,4vw,48px)}
 .sec-h p{margin:0;color:var(--mut)}
 .occ{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:76px}
+.occ-img{display:block;width:100%;height:auto;border-radius:26px;margin:0 auto 76px}
 .tile{position:relative;overflow:hidden;text-align:start;border:0;border-radius:26px;padding:22px 22px 70px;background:var(--bg);min-height:190px}
 .tile h3{font-size:28px}.tile p{margin:2px 0 0;font-size:14px;color:#4b4660}
 .tile i{position:absolute;bottom:0;inset-inline-end:20px;width:64px;height:90px;border-radius:999px 999px 0 0;background:rgba(31,27,58,.1);transition:height .25s}
@@ -308,7 +309,7 @@ header :focus-visible{outline-color:#e5c887}
 .drawer .vc-wrap{padding-block:10px 0}.drawer .vc-border{max-width:236px}.drawer .vc{font-size:.8em}
 @media(max-height:720px){.drawer .vc-wrap{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
-
+ 
 /* ===== زر تغيير اللغة ===== */
 .lang-switch{direction:ltr;position:relative;display:grid;grid-template-columns:1fr 1fr;width:96px;height:36px;padding:3px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.07);cursor:pointer;flex:none}
 .lang-switch::before{content:"";position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:linear-gradient(135deg,#d9a93f,#8a6420);box-shadow:0 4px 10px rgba(192,144,47,.4);transition:transform .45s cubic-bezier(.68,-.25,.27,1.25)}
@@ -346,7 +347,7 @@ header :focus-visible{outline-color:#e5c887}
   <a class="tnc-cta" href="#shop">تسوّق الشالات</a>
  </div>
 </header>
-
+ 
 <main id="top">
 <section class="wrap hero">
  <div>
@@ -361,12 +362,12 @@ header :focus-visible{outline-color:#e5c887}
   </div>
  </div>
 </section>
-
+ 
 <section class="wrap" id="occsec">
- <div class="sec-h"><h2>هتلبسه فين؟</h2><p>اختار المناسبة وهنعرضلك الشالات الأنسب.</p></div>
- <div class="occ" id="occ"><button class="tile" style="--bg:#dfe5d6" data-o="يومي" aria-pressed="false"><h3>يومي</h3><p>خفيف ومريح للطلعة العادية</p><i></i><em>٣ موديلات</em></button><button class="tile" style="--bg:#e9dccf" data-o="شتا" aria-pressed="false"><h3>شتا</h3><p>دفا من غير تقل</p><i></i><em>٣ موديلات</em></button><button class="tile" style="--bg:#efd9d2" data-o="مناسبات" aria-pressed="false"><h3>مناسبات</h3><p>لمعة وتطريز للسهرة</p><i></i><em>٤ موديلات</em></button><button class="tile" style="--bg:#e6dff0" data-o="هدية" aria-pressed="false"><h3>هدية</h3><p>جاهز للتغليف</p><i></i><em>٤ موديلات</em></button></div>
+ <img class="occ-img" src="https://cdn.phototourl.com/member/2026-10-23-b5230a5c-f43e-4c3f-a6df-e248f482da79.jpg" alt="هتلبسه فين؟" loading="lazy">
+ <div class="occ" id="occ" hidden></div>
 </section>
-
+ 
 <section class="wrap" id="shop">
  <nav class="crumb" id="crumb" aria-label="مسار التصفح"><ol><li><a href="#top" aria-label="الرئيسية"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg></a></li><li class="sep" aria-hidden="true"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li><li><span aria-current="page">المنتجات</span></li></ol></nav>
  <div class="sec-h"><h2>المنتجات</h2><span id="resCount" style="color:var(--mut)">٨ منتج</span></div>
@@ -378,7 +379,7 @@ header :focus-visible{outline-color:#e5c887}
  </div>
  <div class="grid" id="grid"><article class="card" id="p-1"><span class="badge">الأكثر طلبًا</span><button class="fav" data-f="1" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="1"><div class="fab" style="--c:#ece2cf;--a:#b8975f"></div><div class="fab" style="--c:#ece2cf;--a:#b8975f"></div><a class="quick" href="#qv-1">نظرة سريعة</a></div><div class="info"><small>حرير</small><h3>شال حرير عاجي</h3><div class="sws"><button class="sw" data-s="1:0" aria-pressed="true" aria-label="عاجي" title="عاجي" style="--c:#ece2cf"></button><button class="sw" data-s="1:1" aria-pressed="false" aria-label="وردي" title="وردي" style="--c:#d8b8b0"></button><button class="sw" data-s="1:2" aria-pressed="false" aria-label="سيدج" title="سيدج" style="--c:#a9b5a2"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>١٬٤٥٠ ج.م</b><s>١٬٨٠٠ ج.م</s></span><label class="add nl-add" for="c1"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-2"><span class="badge">جديد</span><button class="fav" data-f="2" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="2"><div class="fab" style="--c:#cdb28a;--a:#8a6d43"></div><div class="fab" style="--c:#cdb28a;--a:#8a6d43"></div><a class="quick" href="#qv-2">نظرة سريعة</a></div><div class="info"><small>كشمير</small><h3>شال كشمير رملي</h3><div class="sws"><button class="sw" data-s="2:0" aria-pressed="true" aria-label="رملي" title="رملي" style="--c:#cdb28a"></button><button class="sw" data-s="2:1" aria-pressed="false" aria-label="رمادي" title="رمادي" style="--c:#8f8a86"></button><button class="sw" data-s="2:2" aria-pressed="false" aria-label="عنابي" title="عنابي" style="--c:#6e3b42"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>٢٬٤٠٠ ج.م</b></span><label class="add nl-add" for="c2"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-3"><button class="fav" data-f="3" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="3"><div class="fab" style="--c:#e2c3bb;--a:#a2564a"></div><div class="fab" style="--c:#e2c3bb;--a:#a2564a"></div><a class="quick" href="#qv-3">نظرة سريعة</a></div><div class="info"><small>مطرز</small><h3>شال مطرز وردي باهت</h3><div class="sws"><button class="sw" data-s="3:0" aria-pressed="true" aria-label="وردي باهت" title="وردي باهت" style="--c:#e2c3bb"></button><button class="sw" data-s="3:1" aria-pressed="false" aria-label="سماوي" title="سماوي" style="--c:#cfd6e4"></button><button class="sw" data-s="3:2" aria-pressed="false" aria-label="عاجي" title="عاجي" style="--c:#e9dcc3"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>١٬٢٥٠ ج.م</b></span><label class="add nl-add" for="c3"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-4"><button class="fav" data-f="4" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="4"><div class="fab" style="--c:#2a2522;--a:#6e6258"></div><div class="fab" style="--c:#2a2522;--a:#6e6258"></div><a class="quick" href="#qv-4">نظرة سريعة</a></div><div class="info"><small>قطن</small><h3>شال قطن أسود</h3><div class="sws"><button class="sw" data-s="4:0" aria-pressed="true" aria-label="أسود" title="أسود" style="--c:#2a2522"></button><button class="sw" data-s="4:1" aria-pressed="false" aria-label="كحلي" title="كحلي" style="--c:#3b4a5a"></button><button class="sw" data-s="4:2" aria-pressed="false" aria-label="بني" title="بني" style="--c:#5a5148"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>٦٩٠ ج.م</b></span><label class="add nl-add" for="c4"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-5"><button class="fav" data-f="5" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="5"><div class="fab" style="--c:#6c7050;--a:#c8ab80"></div><div class="fab" style="--c:#6c7050;--a:#c8ab80"></div><a class="quick" href="#qv-5">نظرة سريعة</a></div><div class="info"><small>حرير</small><h3>شال حرير زيتي</h3><div class="sws"><button class="sw" data-s="5:0" aria-pressed="true" aria-label="زيتي" title="زيتي" style="--c:#6c7050"></button><button class="sw" data-s="5:1" aria-pressed="false" aria-label="بترولي" title="بترولي" style="--c:#2f4a55"></button><button class="sw" data-s="5:2" aria-pressed="false" aria-label="موف" title="موف" style="--c:#7a5c7a"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>١٬٥٩٠ ج.م</b><s>١٬٩٠٠ ج.م</s></span><label class="add nl-add" for="c5"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-6"><button class="fav" data-f="6" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="6"><div class="fab" style="--c:#9a9894;--a:#4a4846"></div><div class="fab" style="--c:#9a9894;--a:#4a4846"></div><a class="quick" href="#qv-6">نظرة سريعة</a></div><div class="info"><small>كشمير</small><h3>شال كشمير رمادي</h3><div class="sws"><button class="sw" data-s="6:0" aria-pressed="true" aria-label="رمادي" title="رمادي" style="--c:#9a9894"></button><button class="sw" data-s="6:1" aria-pressed="false" aria-label="بيج" title="بيج" style="--c:#c9b9a6"></button><button class="sw" data-s="6:2" aria-pressed="false" aria-label="فحمي" title="فحمي" style="--c:#34383f"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>٢٬٢٥٠ ج.م</b></span><label class="add nl-add" for="c6"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-7"><span class="badge">الأكثر مبيعًا</span><button class="fav" data-f="7" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="7"><div class="fab" style="--c:#d9c19a;--a:#8a6d43"></div><div class="fab" style="--c:#d9c19a;--a:#8a6d43"></div><a class="quick" href="#qv-7">نظرة سريعة</a></div><div class="info"><small>مطرز</small><h3>شال مطرز بيج ذهبي</h3><div class="sws"><button class="sw" data-s="7:0" aria-pressed="true" aria-label="بيج ذهبي" title="بيج ذهبي" style="--c:#d9c19a"></button><button class="sw" data-s="7:1" aria-pressed="false" aria-label="ورد" title="ورد" style="--c:#e8cfc4"></button><button class="sw" data-s="7:2" aria-pressed="false" aria-label="أخضر هادي" title="أخضر هادي" style="--c:#bfc7b5"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>١٬٧٩٠ ج.م</b></span><label class="add nl-add" for="c7"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article><article class="card" id="p-8"><button class="fav" data-f="8" aria-pressed="false" aria-label="إضافة للمفضلة">♡</button><div class="arch art" data-q="8"><div class="fab" style="--c:#7b2c36;--a:#d9b3a0"></div><div class="fab" style="--c:#7b2c36;--a:#d9b3a0"></div><a class="quick" href="#qv-8">نظرة سريعة</a></div><div class="info"><small>قطن</small><h3>شال قطن نبيتي</h3><div class="sws"><button class="sw" data-s="8:0" aria-pressed="true" aria-label="نبيتي" title="نبيتي" style="--c:#7b2c36"></button><button class="sw" data-s="8:1" aria-pressed="false" aria-label="أخضر" title="أخضر" style="--c:#2f5d57"></button><button class="sw" data-s="8:2" aria-pressed="false" aria-label="خردلي" title="خردلي" style="--c:#c79a4a"></button><span>٣ ألوان</span></div><div class="row"><span class="price"><b>٧٥٠ ج.م</b><s>٨٩٠ ج.م</s></span><label class="add nl-add" for="c8"><span class="a1">أضف للسلة</span><span class="a2">✓ في السلة</span></label></div></div></article></div>
 </section>
-
+ 
 <section class="craft" id="craft">
  <div class="wrap">
   <h2>كل خامة ليها حكاية وطريقة عناية</h2>
@@ -389,7 +390,7 @@ header :focus-visible{outline-color:#e5c887}
   </div>
  </div>
 </section>
-
+ 
 <section class="wrap" id="reviews" style="margin-top:80px">
  <div class="sec-h"><h2>آراء العملاء</h2></div>
  <div class="rev">
@@ -399,7 +400,7 @@ header :focus-visible{outline-color:#e5c887}
  </div>
 </section>
 </main>
-
+ 
 <footer id="contact" style="margin-top:90px">
  <div class="wrap">
   <div class="fg">
@@ -423,7 +424,7 @@ header :focus-visible{outline-color:#e5c887}
   </div>
  </div>
 </footer>
-
+ 
 <noscript>
 <input type="checkbox" class="cc" id="c1" style="--p:1450" aria-label="شال حرير عاجي">
 <input type="checkbox" class="cc" id="c2" style="--p:2400" aria-label="شال كشمير رملي">
@@ -461,7 +462,7 @@ header :focus-visible{outline-color:#e5c887}
 </aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="تفاصيل"><div class="box" id="box"></div></div>
 <div class="toast" id="toast" role="status"></div>
-
+ 
 <script>
 var P=[
 {id:1,n:"شال حرير عاجي",c:"حرير",p:1450,o:1800,u:["مناسبات","هدية"],d:"حرير طبيعي خفيف بلمعة هادية.",z:"٩٠×٢٠٠ سم",tag:"الأكثر طلبًا",v:[["#ece2cf","#b8975f","عاجي"],["#d8b8b0","#8f4f45","وردي"],["#a9b5a2","#55654f","سيدج"]]},
@@ -583,7 +584,7 @@ a.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.prev
 a.addEventListener("blur",function(){a.classList.remove("zoom")})})();
 load();filt();renderCart();
 </script>
-
+ 
 <script>
 (function(){
  var EN={
@@ -619,3 +620,9 @@ load();filt();renderCart();
 </script>
 </body>
 </html>
+ 
+
+
+
+
+
